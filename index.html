@@ -6,51 +6,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>c3LucasFriasDesafio3</title>
 </head>
-
+ 
 <body>
     <script>
-        let limite;
-        let dias;
-        let precio;
-        let acum;
-        let hoy;
         let nombre = prompt ("Ingrese su primer nombre");
         if ((nombre != "") && (((nombre == "Juan") || (nombre == "juan") || (nombre == "JUAN")))) {
-                alert ("Bienvenido Tutor");
-                alert ("Hoy vamos a probar una calculadora que suma los gastos del dia y te hace sentir mal cuando gastas mas del presupuesto.");
-                dias = prompt ("Ingrese cuantos dias  quiere cargar:");
-                limite = prompt ("Ingrese cual sera su limite de presupuesto por la combinacion de todos esos esos dias, por ejemplo: 3000");
-                parseInt (dias);
-                parseInt (limite);
-
-                for (hoy = 1; hoy <= dias; hoy++) {
-
-                    parseInt (hoy);
-                    alert ("Dia: " + hoy);
-                    hoy++;
-                    parseInt (dias);
-                    precio = prompt ("Ingrese el gasto de hoy");
-                    parseInt (precio);
-                    parseInt (acum);
-                    acum = acum + precio;
-                    parseInt (acum);
-                    alert("total de gasto " + acum); //Me muestra un error de undefined en vez de el precio del total
-                                                    //Mas alla de que parsee las variables para realizar operaciones de manera numerica por ejemplo: muestra undefined300 y me lleva directo adentro del if
-                    if (acum > limite)
-                    {
-                        alert ("Que hiciste? Ahora no vamos a poder pagar el wifi. Tu limite era " + limite + " y te fuiste al pasto con " + precio);
-                        break;
-                    }
+            let acum = 0;
+ 
+            alert ("Bienvenido Tutor");
+            alert ("Hoy vamos a probar una calculadora que suma los gastos del dia y te hace sentir mal cuando gastas mas del presupuesto.");
+            var dias = prompt ("Ingrese cuantos dias  quiere cargar:");
+            var limite = prompt ("Ingrese cual sera su limite de presupuesto por la combinacion de todos esos esos dias, por ejemplo: 3000");
+            parseInt (dias);
+            parseInt (limite);
+ 
+            for (let hoy = 1; hoy <= dias; hoy++) {
+ 
+                parseInt (hoy);
+                alert ("Dia: " + hoy);
+                let precio = parseInt (prompt ("Ingrese el gasto de hoy"));
+                acum = acum + precio;
+                alert("total de gasto " + acum); //Me muestra un error de undefined en vez de el precio del total
+                                                //Mas alla de que parsee las variables para realizar operaciones de manera numerica por ejemplo: muestra undefined300 y me lleva directo adentro del if
+                if (acum > limite){
+                    alert ("Que hiciste? Ahora no vamos a poder pagar el wifi. Tu limite era " + limite + " y te fuiste al pasto con " + precio);
+                    break;
                 }
-                alert ("adios");
+            }
+            alert ("adios");
         }
         else{
-            alert ("Intruso detectado: ciclo infinto mata ram en la consola activado");
-            while (true){
-                /*console.log ("https://www.youtube.com/watch?v=dQw4w9WgXcQ");*/ //La verdad que esto lo comente por las dudas, pq con 16 gb de ram fui al baño, volvi y tuve que desenchufar la pc directamente
+            var escape = 0;
+            while (escape != 1){
+                alert ("Intruso detectado: ciclo infinto mata ram en la consola activado");
+                escape = prompt (" presione 1 para terminar el programa");
             }
         }
     </script>
-    
+ 
 </body>
 </html>
